@@ -1,7 +1,21 @@
-# alt + shift + F10
-n = int(input("정수 입력 :"))
-result = n * (n + 1) // 2 # O(1)
+import random
+answer = random.randint(1, 1000)
+win = False
 
-print(result)
+for guesses in range(10):
+    print(f"{10-guesses}번의 기회가 남았습니다. 숫자입력 : ", end='')
+    guess = int(input())
 
-# n이 1개 -> 선형시간
+    if answer == guess:
+        print("정답입니다.")
+        win = True
+        break
+    elif answer > guess:
+        print("입력하신 수는 정답보다 작은 수 입니다. LOW")
+    else:
+        print("입력하신 수는 정답보다 큰 수 입니다. HIGH")
+
+    if win:
+        print("you win!")
+    else:
+        print(f"you lose. the answer is {answer}.")
