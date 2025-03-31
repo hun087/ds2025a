@@ -23,7 +23,8 @@ class LinkedList:
         result = ""
         while current is not None:
             # print(current.data)
-            result = result + str(current.data) + " -> "
+            # result = result + str(current.data) + " -> "
+            result = result + f"{current.data} -> "
             current = current.link
         return result + "END"
         #return "Linked list!"
