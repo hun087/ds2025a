@@ -24,10 +24,17 @@ class Stack:
         popped_node.link = None
         return popped_node.data
 
+    def peek(self):
+        return self.top.data        #ex) 시험 () 넣기
 
 s1 = Stack()
-print(s1.pop())
+# print(s1.pop())
 s1.push("Data structure")
 s1.push("Database")
-print(s1.pop())
-print(s1.pop())
+# print(s1.pop())
+s1.pop() # 삭제만
+print(s1.peek())
+#for i in range(2):      # 선형 시간
+#    print(s1.pop())
+
+# size, is_empty 도 추가
