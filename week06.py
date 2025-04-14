@@ -27,6 +27,7 @@ class Queue:
         self.size = self.size - 1   # 1개 삭제
         temp = self.front
         self.front = self.front.link    # move
+        temp.link = None    # 순서 중요
         if self.front is None:
             self.rear = None
         return temp.data
