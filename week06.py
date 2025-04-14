@@ -27,6 +27,7 @@ class Queue:
         self.size = self.size - 1   # 1개 삭제
         temp = self.front
         self.front = self.front.link    # move
+        # self.front = self.rear    # 원소가 3개 이상 이면 코드 불가능
         temp.link = None    # 순서 중요
         if self.front is None:
             self.rear = None
@@ -35,8 +36,9 @@ class Queue:
 q = Queue()
 q.enqueue("Data structure")     # front
 q.enqueue("Database")
+q.enqueue("Javascript")
 print(q.size, q.front.data, q.rear.data)
 print(q.dequeue())
 print(q.size, q.front.data, q.rear.data)
 print(q.dequeue())
-print(q.size, q.front, q.rear)
+print(q.size, q.front.data, q.rear.data)
