@@ -34,19 +34,16 @@ def search(find_number):
     current = root
     while True:
         if find_number == current.data:
-            print(f"{find_number}을(를) 찾았습니다")
-            break
+            return True
         elif find_number < current.data:
             if current.left is None:
-                print(f"{find_number}이(가) 존재하지 않습니다")
-                break
+                return False
             current = current.left
         else:
             if current.right is None:
-                print(f"{find_number}이(가) 존재하지 않습니다")
-                break
+                return False
             current = current.right
-
+    # 입출력 제거
 
 def insert(root, value):
     node = TreeNode()
@@ -69,6 +66,7 @@ def insert(root, value):
             current = current.right  # 이동
     return root
 
+
 if __name__ == "__main__":
     numbers = [10, 15, 8, 3, 9, 100, 7, 13]
     root = None
@@ -80,5 +78,9 @@ if __name__ == "__main__":
     post_order(root)
     print()
     find_number = int(input("찾는 수는? "))
-    search(find_number)
+    if search(find_number):
+        print(f"{find_number}을(를) 찾았습니다")
+    else:
+        print(f"{find_number}이(가) 존재하지 않습니다")
+
 
