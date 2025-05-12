@@ -1,10 +1,10 @@
 # BST
-
 class TreeNode:
 	def __init__(self):
 		self.left = None
 		self.data = None
 		self.right = None
+
 
 def pre_order(node):
     if node is None:
@@ -30,8 +30,7 @@ def post_order(node):
     print(node.data, end="->")
 
 
-def search():
-    find_number = int(input("찾는 수는?"))
+def search(find_number):
     current = root
     while True:
         if find_number == current.data:
@@ -80,4 +79,6 @@ if __name__ == "__main__":
     print('BST 구성 완료')
     post_order(root)
     print()
-    search()
+    find_number = int(input("찾는 수는? "))
+    search(find_number)
+
